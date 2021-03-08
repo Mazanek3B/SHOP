@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: antiquewhite;
+            display: flex;
+            flex-direction: column;
+        }
+        #top{
+            height: 15vh;
+            width: 100vw;
+            box-sizing: border-box;
+            margin: 0;
+            background-color: rgb(179, 168, 154);
+            display: flex;
+        }
+        #center{
+            height: 85vh;
+            width: 100vw;
+            box-sizing: border-box;
+            float: left;
+            float: top;
+            background-color: white;
+            display: block;
+            text-align: center;
+        }
+        #center2{
+            height: 85vh;
+            width: 100vw;
+            box-sizing: border-box;
+            float: left;
+            background-color: white;
+            display: none;
+            text-align: center;
+        }
+        #center3{
+            height: 85vh;
+            width: 100vw;
+            box-sizing: border-box;
+            float: left;
+            background-color: white;
+            display: none;
+            text-align: center;
+        }
+        .navig{
+            width: 25vw;
+            height: 15vh;
+            text-align: center;
+            padding-top:3% ;
+            box-sizing: border-box;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        ul{
+            list-style-type: none;
+        }
+        #koszyk{
+            position: absolute;
+            background-color:rgb(230, 212, 191) ;
+            text-align: center;
+            width: 25%;
+            height: 60vh;
+            margin-left: 75%;
+            margin-top: 15vh;
+            display: none;
+        }
+        .shopitem{
+            height: 25%;
+            width: 100vw;
+            display: flex;
+            border-bottom: solid;
+            justify-content: space-between;
+
+        }
+        .buty{
+            height: 150px;
+            float: left;
+        }
+        h2{
+            margin: 5%;
+            margin-top: 3%;
+        }
+        .basket{
+            width: 50px;
+            float: right;
+        }
+        #button1{
+          display: none;
+        }
+        #button2{
+          display: none;
+        }
+        #button3{
+          display: none;
+        }
+        #informacje{
+          font-size: 3em;
+          text-align: left;
+          padding: 10%;
+        }
+    </style>
+</head>
+<body>
+    <ul id="top">
+        <li class="navig" id="a" onclick="nav1()" >HOME</li>
+        <li class="navig" id="b" onclick="nav2()" >SHOP</li>
+        <li class="navig" id="c" onclick="nav3()" >INFO</li>
+        <li class="navig" id="d" onclick="kosz()">KOSZYK</li>
+    </ul>
+    <div id="center"><h1>Sklep ze wszystkim i niczym</h1></div>
+    <div id="center2"><h1>Produkty</h1>
+    <div class="shopitem"><img class="buty" src="1.jpg"> <h2>Śmieszne buty z "Back to the future" <br> 999999.99zł</h2> <img class="basket" id="kosz1" src="kosz.svg"> </div>
+    <div class="shopitem"><img class="buty" src="2.jpg"> <h2>Szybkie trzewiki do spacerów" <br> 300zł</h2> <img class="basket" id="kosz2" src="kosz.svg"></div>
+    <div class="shopitem"><img class="buty" src="3.jpg"> <h2>Wyglądają jakby miały pasek RGB, może są gamingowe <br> 420.69zł</h2> <img class="basket" id="kosz3" src="kosz.svg"></div>
+    </div>
+    <div id="center3"><h1>INFORMACJE</h1>
+    <div id="informacje">
+      Nasz sklep jest wysoce prestiżowy i nasze produkty wyprzedają się w ułamku sekundy więc nie zastanawiaj się i poprostu kup co masz w koszyku :)
+    </div>
+    </div>
+    <div id="koszyk" ><h1>Koszyk</h1>
+      <div id="but1"><button id="button1">Usuń</button></div>
+      <div id="but2"><button id="button2">Usuń</button></div>
+      <div id="but3"><button id="button3">Usuń</button></div>
+      <h5>JEŚLI CZEGOŚ BRAKUJE ODŚWIEŻ STRONĘ</h5>
+      <button id="buy">Kup</button>
+    </div>
+
+</body>
+<script>
+
+function nav1() {
+  let x = document.getElementById("center");
+  let y = document.getElementById("center2");
+  let z = document.getElementById("center3");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    y.style.display = "none";
+    z.style.display = "none";
+
+  } else {
+    x.style.display = "block";
+
+  }
+  if(x.style.display === "none" &&
+    y.style.display === "none" &&
+    z.style.display === "none"){
+        x.style.display = "block";
+    }
+
+}
+
+function nav2() {
+    let x = document.getElementById("center");
+  let y = document.getElementById("center2");
+  let z = document.getElementById("center3");
+  if (y.style.display === "none") {
+    y.style.display = "block";
+    x.style.display = "none";
+    z.style.display = "none";
+
+  } else {
+    y.style.display = "none";
+
+  }
+  if(x.style.display === "none" &&
+    y.style.display === "none" &&
+    z.style.display === "none"){
+        x.style.display = "block";
+    }
+}
+
+function nav3() {
+    let x = document.getElementById("center");
+  let y = document.getElementById("center2");
+  let z = document.getElementById("center3");
+  if (z.style.display === "none") {
+    y.style.display = "none";
+    x.style.display = "none";
+    z.style.display = "block";
+
+    
+  } else {
+    z.style.display = "none";
+
+  }
+  if(x.style.display === "none" &&
+    y.style.display === "none" &&
+    z.style.display === "none"){
+        x.style.display = "block";
+    }
+}
+function kosz() {
+  let x = document.getElementById("koszyk");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+document.getElementById("kosz1").addEventListener("click", function() {
+  let node = document.createElement("div");
+  let tytul = document.createTextNode("Kosmiczne Buty 999999.99zł");
+  document.getElementById("kosz1").style.display="none";
+  node.appendChild(tytul);
+  let element = document.getElementById("but1");
+  element.appendChild(tytul);
+  document.getElementById("button1").style.display= "block";
+
+});
+document.getElementById("kosz2").addEventListener("click", function() {
+  let node = document.createElement("div");
+  let tytul = document.createTextNode('Buty do biegania 300zł');
+  document.getElementById("kosz2").style.display="none";
+  node.appendChild(tytul);
+  let element = document.getElementById("but2");
+  element.appendChild(tytul);
+  document.getElementById("button2").style.display= "block";
+  
+});
+document.getElementById("kosz3").addEventListener("click", function() {
+  let node = document.createElement("div");
+  let tytul = document.createTextNode("Buty RGB 420,69zł");
+  document.getElementById("kosz3").style.display="none";
+  node.appendChild(tytul);
+  let element = document.getElementById("but3");
+  element.appendChild(tytul);
+  document.getElementById("button3").style.display= "block";
+  
+});
+
+document.getElementById("button1").addEventListener("click", function() {
+  document.getElementById("but1").style.display= "block";
+  document.getElementById("kosz1").style.display="none";
+  let tekst = document.createTextNode("   Out of stock!");
+  let off = document.getElementById("but1");
+  off.appendChild(tekst);
+  this.remove();
+
+});
+document.getElementById("button2").addEventListener("click", function() {
+  document.getElementById("but2").style.display= "block";
+  document.getElementById("kosz2").style.display="none";
+  let tekst = document.createTextNode('   Out of stock!');
+  let off = document.getElementById("but2");
+  off.appendChild(tekst);
+  this.remove();
+});
+document.getElementById("button3").addEventListener("click", function() {
+  document.getElementById("but3").style.display= "block";
+  document.getElementById("kosz3").style.display="none";
+  let tekst = document.createTextNode("   Out of stock!");
+  let off = document.getElementById("but3");
+  off.appendChild(tekst);
+  this.remove();
+});
+document.getElementById("buy").addEventListener("click", function() {
+  document.getElementById("but1").style.display= "none";
+  document.getElementById("but2").style.display= "none";
+  document.getElementById("but3").style.display= "none";
+  let done = document.createTextNode("ione i pozostało czekać");
+  let shop = document.getElementById("buy");
+  shop.appendChild(done);
+  document.getElementById("buy").id="niebuy";
+
+  
+});
+
+
+</script>
+</html>
